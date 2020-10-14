@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        toggle = ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
+        toggle = ActionBarDrawerToggle(this,drawerLayout_main, R.string.open, R.string.close)
+        drawerLayout_main.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navView.setNavigationItemSelectedListener {
+        navView_main.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.miItem2 -> {
                     val intent = Intent(this,CurseActivity::class.java)
