@@ -25,9 +25,11 @@ class MainActivity : AppCompatActivity() {
 
 
         rollButton.setOnClickListener {
-            if (Integer.parseInt(input.text.toString()) <= 1000000){
-                val rand = 1 + Random().nextInt(Integer.parseInt(input.text.toString()))
-                resultTextView.text = rand.toString()
+            if(input.text.toString() != "") {
+                if (Integer.parseInt(input.text.toString()) <= 1000000) {
+                    val rand = 1 + Random().nextInt(Integer.parseInt(input.text.toString()))
+                    resultTextView.text = rand.toString()
+                }
             }
         }
 
@@ -39,12 +41,14 @@ class MainActivity : AppCompatActivity() {
 
         navView_main.setNavigationItemSelectedListener {
             when(it.itemId){
+                R.id.miItem1 -> {
+                    val intent = Intent(this,MainActivity::class.java)
+                    startActivity(intent)
+                }
                 R.id.miItem2 -> {
                     val intent = Intent(this,CurseActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.miItem3 -> Toast.makeText(applicationContext,
-                    "Coming Soon", Toast.LENGTH_SHORT).show()
             }
             true
         }
