@@ -20,16 +20,20 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton = findViewById<Button>(R.id.rollButton)
         val resultTextView = findViewById<TextView>(R.id.resultView)
-        val input = findViewById<EditText>(R.id.inputView)
+        val inputLow = findViewById<EditText>(R.id.inputLowView)
+        val inputHigh = findViewById<EditText>(R.id.inputUpperView)
 
 
 
         rollButton.setOnClickListener {
-            if(input.text.toString() != "") {
-                if (Integer.parseInt(input.text.toString()) <= 1000000) {
-                    val rand = 1 + Random().nextInt(Integer.parseInt(input.text.toString()))
+            if(inputLow.text.toString() != "" && inputHigh.text.toString() != "") {
+                 if (Integer.parseInt(inputHigh.text.toString()) <= 99999 && Integer.parseInt(inputHigh.text.toString()) > Integer.parseInt(inputLow.text.toString())) {
+                    val rand = Integer.parseInt(inputLow.text.toString()) +  1 + Random().nextInt(Integer.parseInt(inputHigh.text.toString()) - Integer.parseInt(inputLow.text.toString()))
                     resultTextView.text = rand.toString()
                 }
+                 else{
+                     Toast.makeText(applicationContext,"Invalid Input",Toast.LENGTH_SHORT).show()
+                 }
             }
         }
 
