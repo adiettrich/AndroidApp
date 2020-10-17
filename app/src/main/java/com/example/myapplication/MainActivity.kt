@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton = findViewById<Button>(R.id.rollButton)
-        val resultTextView = findViewById<TextView>(R.id.resultView)
+        val rollButton = findViewById<Button>(R.id.mainRollButton)
+        val resultTextView = findViewById<TextView>(R.id.mainOutputView)
         val inputLow = findViewById<EditText>(R.id.inputLowView)
         val inputHigh = findViewById<EditText>(R.id.inputUpperView)
 
