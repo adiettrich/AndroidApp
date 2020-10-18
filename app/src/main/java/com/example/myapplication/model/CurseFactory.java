@@ -10,10 +10,9 @@ import lombok.Setter;
 
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 public class CurseFactory {
 
-    private ArrayList<Curse> curses;
+    private final ArrayList<Curse> curses = new ArrayList<Curse>();
 
     public void initCurses(){
         curses.add(Curse.builder().eng(null).ger("Gehirnakrobat").level(0).build());

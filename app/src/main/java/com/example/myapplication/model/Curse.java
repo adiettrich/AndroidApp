@@ -12,7 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 public class Curse {
 
-    @Setter
     @NonNull
     private String ger;
 
@@ -20,18 +19,22 @@ public class Curse {
     @Setter
     private String eng;
 
-    @Getter
-    @Setter
     @IntRange(from = 0, to = 10)
     private int level;
 
-    @NonNull
-    @Getter
     @PrimaryKey(autoGenerate = true)
     private long id;
 
     public String getGer(){
         return this.ger;
     }
+
+    public void setGer(String newGer){ this.ger = newGer; }
+
+    public int getLevel(){ return this.level; }
+
+    public void setLevel(int newLvl){ this.level = newLvl; }
+
+    public long getId(){ return this.id; }
 
 }

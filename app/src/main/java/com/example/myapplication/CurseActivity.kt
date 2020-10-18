@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.model.Curse
@@ -39,7 +40,12 @@ class CurseActivity : AppCompatActivity(){
         }
 
         confirm.setOnClickListener{
-
+            for(curse in curses){
+                if(curse.ger == output.text){
+                    curse.level = seekBar.progress
+                    Toast.makeText(applicationContext,"You rated this curse a " + seekBar.progress.toString() + "/10",Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
 
