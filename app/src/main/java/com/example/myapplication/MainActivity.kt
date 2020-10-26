@@ -45,12 +45,12 @@ class MainActivity : AppCompatActivity() {
 
         navView_main.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.miItem1 -> {
-                    val intent = Intent(this,MainActivity::class.java)
-                    startActivity(intent)
-                }
                 R.id.miItem2 -> {
                     val intent = Intent(this,CurseActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.miItem3 -> {
+                    val intent = Intent(this,CameraActivity::class.java)
                     startActivity(intent)
                 }
             }

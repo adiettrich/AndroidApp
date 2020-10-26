@@ -9,7 +9,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.model.Curse
 import com.example.myapplication.model.CurseFactory
 import kotlinx.android.synthetic.main.activity_curse.*
 import java.util.*
@@ -63,7 +62,7 @@ class CurseActivity : AppCompatActivity(){
                     startActivity(intent)
                 }
                 R.id.miItem3 -> {
-                    val intent = Intent(this,ThirdActivity::class.java)
+                    val intent = Intent(this,CameraActivity::class.java)
                     startActivity(intent)
                 }
             }
